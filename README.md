@@ -9,6 +9,8 @@ Security tools today generate a lot of alerts, and most of them are false positi
 
 Caber has drawn from scalable technologies across multiple disciplines to rearchitect indicent detection and analysis in a way that makes false positives as rare as a hash collision. 
 
+![cytoscape_1200_800.png](images/cytoscape_1200_800.png)
+
 ## How it Works
 
 False positives are a result of the probabalistic approach taken by today's security tools that hunt for Indicators of Compromise (IoC) and Indicators of Attack (IoA), and authorize access to data-in-transit and data-in-use based upon API header and request parameters rather than on permissions associated with the data itself.
@@ -25,7 +27,6 @@ By combining these call-graphs Caber CA/CO builds a model application behavior t
 - **AI Incident Analysis and Policy Generation**: Combining calls graphs with AI, Caber CA/CO can generate policy updates, resource tagging, and configuration changes to remediate incidents.
 - **Scalable Automated Deployment**: Caber deploys automatically into your AWS account and requires no agents or code changes. Only two observation points in the application, log ingest and a gateway plug-in, are required for it to work. 
 
-![ScreenShot.png](images/ScreenShot.png)
 
 ## Demo Caber CA/CO
 A self-service live demo of Caber CA/CO is available at https://caber.com.
