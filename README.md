@@ -9,7 +9,7 @@ Security tools today generate a lot of alerts, and most of them are false positi
 
 Caber has drawn from scalable technologies across multiple disciplines to rearchitect indicent detection and analysis in a way that makes false positives as rare as a hash collision. 
 
-![cytoscape_1200_800.png](images/cytoscape_1200_800.png)
+![Screen Shot](images/cytoscape_1280_900.png)
 
 ## How it Works
 
