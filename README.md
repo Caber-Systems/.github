@@ -25,15 +25,17 @@ By combining these call-graphs Caber CA/CO builds a model application behavior t
 - **AI Incident Analysis and Policy Generation**: Combining calls graphs with AI, Caber CA/CO can generate policy updates, resource tagging, and configuration changes to remediate incidents.
 - **Scalable Automated Deployment**: Caber deploys automatically into your AWS account and requires no agents or code changes. Only two observation points in the application, log ingest and a gateway plug-in, are required for it to work. 
 
+![ScreenShot.png](images/ScreenShot.png)
+
 ## Demo Caber CA/CO
 A self-service live demo of Caber CA/CO is available at https://caber.com.
 
-Yoiu can also see video walkthrough of the demo at https://vimeo.com/923537694?share=copy
+You can also see video walkthrough of the demo at https://vimeo.com/923537694?share=copy
 
 
 ---
-[^1] [The False Positive Problem in Cybersecurity, CSO Online](https://www.csoonline.com/article/3513898/the-false-positive-problem-in-cybersecurity.html)
+[^1]: [The False Positive Problem in Cybersecurity, CSO Online](https://www.csoonline.com/article/3513898/the-false-positive-problem-in-cybersecurity.html)
 
-[^2] [OWASP Top 10 - 2021](https://owasp.org/www-project-top-ten/)
+[^2]: [OWASP Top 10 - 2021](https://owasp.org/www-project-top-ten/)
 
-[^3] [OWASP API Security Top 10 - 2023](https://owasp.org/API-Security/editions/2023/en/0x00-header/)
+[^3]: [OWASP API Security Top 10 - 2023](https://owasp.org/API-Security/editions/2023/en/0x00-header/)
