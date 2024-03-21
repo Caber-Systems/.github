@@ -44,6 +44,7 @@ To add a comment or ask a question, please head to https://github.com/Caber-Syst
 The core functionality of Caber CA/CO is complete.  However, the repo remains closed as we are still working on configuration, integrations, and reporting functionality.  
 
 Caber CA/CO is Copyright 2023, Caber Systems, Inc.
+
 Terms of use are available at https://www.caber.com/legal/terms-of-service
 
 ---
