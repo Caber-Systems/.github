@@ -1,7 +1,8 @@
 ![CaberLogo.png](../images/CaberLogo.png)
 
 
-# Caber CA/CO: Continuous Authorization and Continuous Observability
+# Caber CA/CO 
+**Continuous Authorization and Continuous Observability**
 
 Caber is addressing one of the toughest question in web application and API security: _How do we get rid of false positive alerts?_
 
@@ -33,9 +34,14 @@ A self-service live demo of Caber CA/CO is available. Go to https://caber.com an
 
 You can also see video walkthrough of the demo at https://vimeo.com/923537694?share=copy
 
+## 
+
 ## Status
 
 The core functionality of Caber CA/CO is complete.  However, the repo remains closed as we are still working on configuration, integrations, and reporting functionality.  
+
+Caber CA/CO is Copyright 2023, Caber Systems, Inc.
+Terms of use are available at https://www.caber.com/legal/terms-of-service
 
 ---
 [^1]: [The False Positive Problem in Cybersecurity, CSO Online](https://www.csoonline.com/article/3513898/the-false-positive-problem-in-cybersecurity.html)
