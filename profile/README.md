@@ -1,7 +1,7 @@
 ![CaberLogo.png](../images/CaberLogo.png)
 
 
-# Welcome to Caber Systems!
+# Caber CA/CO: Continuous Authorization and Continuous Observability
 
 Caber is addressing one of the toughest question in web application and API security: _How do we get rid of false positive alerts?_
 
@@ -13,18 +13,18 @@ Caber has drawn from scalable technologies across multiple disciplines to rearch
 
 ## How it Works
 
-False positives are a result of the probabalistic approach taken by today's security tools.  They hunt for Indicators of Compromise (IoC) by anomalies when change is constant in modern cloud apps due to CI/CD.  Policies that authorize access to data-in-transit and data-in-use are based upon API header and request parameters rather than on permissions associated with the data itself.  Because of growing application complexity, correlation between anomalies and incidents, and between headers and the actual data, is dwindling[^4].
+False positives are a result of the probabalistic approach taken by today's security tools.  They hunt for anomalies when change is constant in modern cloud apps due to CI/CD.  Every new API is a new risk regardless of the data it may carry.  Policies that authorize access to data-in-transit and data-in-use are based upon API header and request parameters rather than on permissions associated with the data itself.  Because of growing application complexity, correlation between an anomaly, an API, or request paramters and true incidents where data confidentiality is compromised, is dwindling[^4].
 
 Caber's Continuous Authorization and Continuous Observability platform, Caber CA/CO for short, is based on deterministic detection of incidents using an authorization-centric architecture that targets the most common vulnerabilities in modern cloud-based applications.
 
-Caber CA/CO traces bytes sequences in API payloads like packages on delivery trucks, and connects them through API call graphs to their original objects and permissions.  
+Caber CA/CO works by tracing bytes sequences in API payloads like packages on delivery trucks, then it connects them through API call graphs to their original objects and permissions.  
 
 By combining these call-graphs, Caber CA/CO builds a model of application behavior that fuels AI-backed analysis of each incident and generation of remediation options such as policy updates, resource tagging, and configuration changes.  This analysis completes in minutes, versus today's Mean Time To Identify (MTTI) an incident of almost 7 months[^5]. 
 
 ## Key Features:
-- **Continuous Authorization & Observation**: Scalably track and authorize API payload access, using existing metadata and permissions
-- **Incident Detection and Analysis**: Get an exact call graph for each incident, showing the path bytes took through the application with full detiails of the API calls and their parameters.
-- **AI Incident Analysis and Policy Generation**: Combining calls graphs with AI, Caber CA/CO can generate policy updates, resource tagging, and configuration changes to remediate incidents.
+- **Authorize with Existing Permission**: Scalably track and authorize API payload access, using existing metadata and permissions in object stores, databases, and streaming sources.
+- **Incident Identification**: Get an exact call graph for each incident, showing the path bytes took through the application with full detiails of the API calls and their parameters.
+- **AI Analysis and Policy Generation**: Combining calls graphs with AI, Caber models application behavior giving it the abiity to pinpoint vulnerabilities, generate configuration updates, and policy changes that can be used to remediate incidents on existing controls.
 - **Scalable Automated Deployment**: Caber deploys automatically into your AWS account and requires no agents or code changes. Only two observation points in the application, log ingest and a gateway plug-in, are required for it to work. 
 
 
@@ -33,6 +33,9 @@ A self-service live demo of Caber CA/CO is available. Go to https://caber.com an
 
 You can also see video walkthrough of the demo at https://vimeo.com/923537694?share=copy
 
+## Status
+
+The core functionality of Caber CA/CO is complete.  However, the repo remains closed as we are still working on configuration, integrations, and reporting functionality.  
 
 ---
 [^1]: [The False Positive Problem in Cybersecurity, CSO Online](https://www.csoonline.com/article/3513898/the-false-positive-problem-in-cybersecurity.html)
