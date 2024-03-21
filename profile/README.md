@@ -1,4 +1,4 @@
-![CaberLogo.png](images/CaberLogo.png)
+![CaberLogo.png](../images/CaberLogo.png)
 
 
 # Welcome to Caber Systems!
@@ -9,7 +9,7 @@ Security tools today generate a lot of alerts, and most of them are false positi
 
 Caber has drawn from scalable technologies across multiple disciplines to rearchitect to flip the web and API security model we have today.  Instead of alerting on every possible threat and being wrong most of the time, Caber detects real incidents deterministically so rights outweigh wrongs by orders of magnitude. 
 
-![Screen Shot](images/cytoscape_1280_900.png)
+![Screen Shot](../images/cytoscape_1280_900.png)
 
 ## How it Works
 
@@ -29,7 +29,7 @@ By combining these call-graphs, Caber CA/CO builds a model of application behavi
 
 
 ## Demo Caber CA/CO
-A self-service live demo of Caber CA/CO is available at https://caber.com.  
+A self-service live demo of Caber CA/CO is available. Go to https://caber.com and click 'Try Demo' at the top.
 
 You can also see video walkthrough of the demo at https://vimeo.com/923537694?share=copy
 
