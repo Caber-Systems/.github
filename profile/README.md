@@ -1,4 +1,4 @@
-![CaberLogo.png](../images/CaberLogo.png)
+![CaberLogo.png](.github/images/CaberLogo.png)
 
 
 # Caber CA/CO 
