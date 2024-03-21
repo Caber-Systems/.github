@@ -37,7 +37,7 @@ You can also see video walkthrough of the demo at https://vimeo.com/923537694?sh
 ## Questions and Support
 We've set up GitHub disccusions for reporting issues and to answer your questions.  We welcome your thoughts and feedback on what we are building.  
 
-To add a comment or ask a question, please head to https://github.com/Caber-Systems/.github/discussions 
+To add a comment or ask a question, please head to https://github.com/Caber-Systems/discussions 
 
 ## Status
 
