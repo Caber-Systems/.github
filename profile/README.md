@@ -10,7 +10,7 @@ Security tools today generate a lot of alerts, and most of them are false positi
 
 Caber has drawn from scalable technologies across multiple disciplines to rearchitect to flip the web and API security model we have today.  Instead of alerting on every possible threat and being wrong most of the time, Caber detects real incidents deterministically so rights outweigh wrongs by orders of magnitude. 
 
-![Screen Shot](/.github/profile/cytoscape_1280_900.png)
+![Screen Shot](/profile/cytoscape_1280_900.png)
 
 ## How it Works
 
