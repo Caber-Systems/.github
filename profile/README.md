@@ -15,6 +15,7 @@ Caber complements today's security tools by making incident detection __determin
 Caber then uses AI to analyze the data collected across the APIs in the application to show the sequence of events leading up to an authorization failure, and generate options to remediate it.  
 
 ![Screen Shot](/profile/cytoscape_1280_900.png)
+*<p align="center">Authorization failure incident and associated API call-graph in Caber CA/CO</p>*
 
 ## How it Works
 
@@ -27,7 +28,10 @@ Using scalable technologies, Caber CA/CO tracks byte sequences in API payloads, 
 By combining these call-graphs, Caber CA/CO builds a model of application behavior that fuels AI-backed analysis of each incident and generation of remediation options such as policy updates, resource tagging, and configuration changes.  This analysis is based on well-known black-box testing techniques[^5] and completes in minutes, versus today's Mean Time To Identify (MTTI) an incident of almost 7 months[^6].  The analysis:
 1. Does not impact, or rely on information from, development engineers since it is independent of the code making up each service or API 
 2. Is effective for large and complex applications
-3. Provides an application-wide model of how data is moved in APIs and affected by each service 
+3. Provides an application-wide model of how data is moved in APIs and affected by each service
+
+![Screen Shot](/profile/caber_caco_neo4j_graph.png)
+*<p align="center">Neo4j graph of Caber CA/CO model for a simple application</p>*
 
 ## Why This is So Important
 
