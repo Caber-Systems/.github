@@ -35,7 +35,9 @@ Because the microservices are built in isolation[^7], developers have intimate k
 
 The importance if this is evident when you consider that, incidents related to interractions between services fall outside the normal responsibilities of the development teams.  Hence it's security engineers that must essentially debug the application to understand how these incidents happened.  
 
-Consider the utility a software debugging tool that cannot show the values of the variables passed in each function call, versus one that can.  Which would win?If you are a software engineer, the answer is obvious.  This is not to say network-oriented tools, or observability tools like those related to OpenTelemetry, that are analogous to that first choice, are not valuable.  However, for the express purpose of debugging an incident, they are no substitute for a tool that can show the actual bytes being passed between functions.  That's the utility Caber's approach brings to incident analysis.
+Consider the utility a software debugging tool that cannot show the values of the variables passed in each function call, versus one that can.  Which would win?If you are a software engineer, the answer is obvious.  This is not to say network-oriented tools, or observability tools like those related to OpenTelemetry, that are analogous to that first choice, are not valuable.  However, for the express purpose of debugging an incident, they are no substitute for a tool that can show the actual bytes being passed between functions.  
+
+That's the utility Caber's approach brings to incident analysis.
 
 ## Key Features:
 - **Authorize with Existing Permission**: Scalably track and authorize API payload access, using existing metadata and permissions in object stores, databases, and streaming sources.
