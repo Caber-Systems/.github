@@ -12,7 +12,7 @@ Security tools today generate a lot of alerts, and most of them are false positi
 
 Using permissions and policies that already exist on protected data, Caber looks at the bytes in egress and internal API payloads to detect unauthorized movement use of that data.
 
-Caber has drawn from scalable technologies across multiple disciplines to make this detection deterministic.  It flips the probabalistic model of web and API security we have today where anomalies and possible threats trigger alarms that, most of the time, are false positives.  Instead, Caber detects real incidents deterministically so rights outweigh wrongs by orders of magnitude. 
+Caber has drawn from scalable technologies across multiple disciplines to make this detection deterministic.  It flips the probabalistic model of web and API security we have today where anomalies and possible threats trigger alarms that, most of the time, are false positives.  Instead, Caber detects real incidents deterministically so true incidents outweigh false detections by orders of magnitude.  Caber then uses AI to analyze the data collected across the APIs in the application to show the sequence of events leading up to an authorization failure, and generate options to remediate it.  
 
 ![Screen Shot](/profile/cytoscape_1280_900.png)
 
