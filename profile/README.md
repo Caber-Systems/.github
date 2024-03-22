@@ -4,11 +4,15 @@
 # Caber CA/CO 
 **Continuous Authorization and Continuous Observability**
 
-Caber is addressing one of the toughest question in web application and API security: _How do we get rid of false positive alerts?_
+Caber is addressing one of the most important questions in web application and API security: 
+
+_How can we find the scary exploits happening inside modern applications without having to sift through the fog of false positive alerts?_
 
 Security tools today generate a lot of alerts, and most of them are false positives[^1]. True incidents of data breaches, such as those described in the OWASP Web Application Top10[^2] and API Security Top10[^3], are burried under thousands of these false positives and go unnoticed. 
 
-Caber has drawn from scalable technologies across multiple disciplines to rearchitect to flip the web and API security model we have today.  Instead of alerting on every possible threat and being wrong most of the time, Caber detects real incidents deterministically so rights outweigh wrongs by orders of magnitude. 
+Using permissions and policies that already exist on protected data, Caber looks at the bytes in egress and internal API payloads to detect unauthorized movement use of that data.
+
+Caber has drawn from scalable technologies across multiple disciplines to make this detection deterministic.  It flips the probabalistic model of web and API security we have today where anomalies and possible threats trigger alarms that, most of the time, are false positives.  Instead, Caber detects real incidents deterministically so rights outweigh wrongs by orders of magnitude. 
 
 ![Screen Shot](/profile/cytoscape_1280_900.png)
 
