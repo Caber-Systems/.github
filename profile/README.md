@@ -27,7 +27,7 @@ Using scalable technologies, Caber CA/CO tracks byte sequences in API payloads, 
 By combining these call-graphs, Caber CA/CO builds a model of application behavior that fuels AI-backed analysis of each incident and generation of remediation options such as policy updates, resource tagging, and configuration changes.  This analysis is based on well-known black-box testing techniques[^5] and completes in minutes, versus today's Mean Time To Identify (MTTI) an incident of almost 7 months[^6].  The analysis:
 1. Does not impact, or rely on information from, development engineers since it is independent of the code making up each service or API 
 2. Is effective for large and complex applications
-3. Provides a application-wide model of application behavior
+3. Provides an application-wide model of how data is moved in APIs and affected by each service 
 
 ## Why This is So Important
 
