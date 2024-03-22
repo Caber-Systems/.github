@@ -6,7 +6,7 @@
 
 Caber is addressing one of the most important questions in web application and API security: 
 
-_How can we find the scary exploits happening inside modern applications without having to sift through the fog of false positive alerts?_
+_How can we find the scary exploits happening inside modern applications without having to sift through a fog of false positive alerts?_
 
 Security tools today generate a lot of alerts, and most of them are false positives[^1]. True incidents of data breaches, such as those described in the OWASP Web Application Top10[^2] and API Security Top10[^3], are burried under thousands of these false positives and go unnoticed. 
 
