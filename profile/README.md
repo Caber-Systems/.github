@@ -6,15 +6,13 @@
 
 Caber is addressing one of the most important questions in web application and API security: 
 
-_How can we find the scary exploits happening inside modern applications without having to sift through a fog of false positive alerts?_
+*<p align="center">How can we find the scary exploits happening inside modern applications<br>without having to sift through a fog of false positive alerts?</p>*
 
-Security tools today generate a lot of alerts, and most of them are false positives[^1]. True incidents of data breaches, such as those described in the OWASP Web Application Top10[^2] and API Security Top10[^3], are burried under thousands of these false positives and go unnoticed. 
+Security tools today are based on __probabalistic__ detection.  They alert on anomalies and potential threats, yet most of these are false alarms[^1]. True incidents of data breaches, such as those described in the OWASP Web Application Top10[^2] and API Security Top10[^3], are burried under thousands of these false positives and go unnoticed or even undetected. 
 
-Using permissions and policies that already exist on protected data, Caber looks at the bytes in egress and internal API payloads inside cloud applications to detect unauthorized use of that data.
+Caber complements today's security tools by making incident detection __deterministic__ rather than probabalistic.  Using permissions and policies that already exist on protected data, Caber looks at the bytes in egress and internal API payloads inside cloud applications to detect unauthorized use of that data.  As a result, the true/false detection ratio is flipped: true incident detections outweigh false detections by orders of magnitude.
 
-Caber has drawn from scalable technologies across multiple disciplines to make this detection deterministic.  It flips the probabalistic model of web and API security we have today where anomalies and possible threats trigger alarms that, most of the time, are false positives.  
-
-Instead, Caber detects real incidents deterministically so true incidents outweigh false detections by orders of magnitude.  Caber then uses AI to analyze the data collected across the APIs in the application to show the sequence of events leading up to an authorization failure, and generate options to remediate it.  
+Caber then uses AI to analyze the data collected across the APIs in the application to show the sequence of events leading up to an authorization failure, and generate options to remediate it.  
 
 ![Screen Shot](/profile/cytoscape_1280_900.png)
 
@@ -24,7 +22,7 @@ False positives are a result of the probabalistic approach taken by today's secu
 
 Caber's Continuous Authorization and Continuous Observability platform, Caber CA/CO for short, is based on deterministic detection of incidents using an authorization-centric architecture that targets the most common vulnerabilities in modern cloud-based applications.
 
-Caber CA/CO works by tracing bytes sequences in API payloads like packages on delivery trucks, then it connects them through API call graphs to their original objects and permissions.  
+Using scalable technologies, Caber CA/CO tracks byte sequences in API payloads, similar to how delivery companies simultanneously track every package from sender to receiver.  From the data collected in this process, Caber CA/CO build API call graphs of how byte sequences move, like the path each package would take, and connect them to their source objects and permissions.  
 
 By combining these call-graphs, Caber CA/CO builds a model of application behavior that fuels AI-backed analysis of each incident and generation of remediation options such as policy updates, resource tagging, and configuration changes.  This analysis completes in minutes, versus today's Mean Time To Identify (MTTI) an incident of almost 7 months[^5]. 
 
