@@ -12,7 +12,9 @@ Security tools today generate a lot of alerts, and most of them are false positi
 
 Using permissions and policies that already exist on protected data, Caber looks at the bytes in egress and internal API payloads inside cloud applications to detect unauthorized use of that data.
 
-Caber has drawn from scalable technologies across multiple disciplines to make this detection deterministic.  It flips the probabalistic model of web and API security we have today where anomalies and possible threats trigger alarms that, most of the time, are false positives.  Instead, Caber detects real incidents deterministically so true incidents outweigh false detections by orders of magnitude.  Caber then uses AI to analyze the data collected across the APIs in the application to show the sequence of events leading up to an authorization failure, and generate options to remediate it.  
+Caber has drawn from scalable technologies across multiple disciplines to make this detection deterministic.  It flips the probabalistic model of web and API security we have today where anomalies and possible threats trigger alarms that, most of the time, are false positives.  
+
+Instead, Caber detects real incidents deterministically so true incidents outweigh false detections by orders of magnitude.  Caber then uses AI to analyze the data collected across the APIs in the application to show the sequence of events leading up to an authorization failure, and generate options to remediate it.  
 
 ![Screen Shot](/profile/cytoscape_1280_900.png)
 
@@ -30,7 +32,7 @@ By combining these call-graphs, Caber CA/CO builds a model of application behavi
 - **Authorize with Existing Permission**: Scalably track and authorize API payload access, using existing metadata and permissions in object stores, databases, and streaming sources.
 - **Incident Identification**: Get an exact call graph for each incident, showing the path bytes took through the application with full detiails of the API calls and their parameters.
 - **AI Analysis and Policy Generation**: Combining calls graphs with AI, Caber models application behavior giving it the abiity to pinpoint vulnerabilities, generate configuration updates, and policy changes that can be used to remediate incidents on existing controls.
-- **Scalable Automated Deployment**: Caber deploys automatically into your AWS account and requires no agents or code changes. Only two observation points in the application, log ingest and a gateway plug-in, are required for it to work. 
+- **Scalable Automated Deployment**: Caber deploys automatically into your AWS account and requires no agents or code changes. Only two observation points in the application, log ingest and an API gateway plug-in, are required for it to work. 
 
 
 ## Demo Caber CA/CO
