@@ -23,7 +23,7 @@ Caber is delivering a radically new architecture for data security that identifi
 - **Agentless Deployment**: Caber deploys with a single click automatically in cloud environments without impacting to GenAI applications.
 
 ## See Caber in Action - No email or Sign-up needed
-Caber is using (Haggle)[ttps://www.gohaggle.io/buyer] to anonymously provide live answers to your questions and show you how Caber works.  Register your interest and get your questions answered by clicking ()[https://app.gohaggle.io/pitch/?domain=https://caber.com]
+Caber is using [Haggle](https://www.gohaggle.io/buyer) to anonymously provide live answers to your questions and show you how Caber works.  Register your interest and get your questions answered by clicking [https://app.gohaggle.io/pitch/?domain=https://caber.com]()
 
 ## About
 Caber is backed by data and security industry veterans from Cisco, Akamai, Riverbed, Netskope, Meta, and Oracle.
