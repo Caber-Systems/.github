@@ -3,25 +3,23 @@
 
 # Fine-Grained Data Security for Generative AI 
 
-Caber is delivering a radically new architecture for data security that identifies rather than classifies data to secure inputs to Generative AI (GenAI) and Retrieval-Augmented Generation (RAG) systems, and monitor their output for sensitive data disclosure.
+Caber is delivering a radically new architecture for ensuring enterprise data used with RAG is delivered only to users authorized to received it.  Caber uses existing enterprise permissions on data.
 
 ![Screen Shot](/profile/RAG_SideBySide.png)
-)
 *<p align="center">Authorization failure incident and associated API call-graph in Caber</p>*
 
 ## Generative AI Security Challenges
 
-- **Chunked Data**: Data in GenAI and RAG systems is chopped up and aggregated with other data before being vectorized.  This thwarts the use of object-centric DLP and traditional data security solutions.
+- **Chunked Data**: Data in GenAI and RAG systems is chunked and, because of enterprise data duplication, it is common to see 60% to 90% of chunks duplicated in multiple documents that can have conflicting permissions.
 - **Per-Customer Policies**: Individual customer mandates on how their data may be used with AI make compliance-oriented classifications (PII, PHI, etc.) overly-broad for securing GenAI use cases.
 - **Lack of Visibility**: Frameworks like LangChain for building GenAI apps pull data from many sources on-demand but lack the ability to show the source, ownership, or permissions that belong to that data.
 - **Scalable Automated Deployment**: Caber deploys automatically into your AWS account and requires no agents or code changes. Only two observation points in the application, log ingest and an API gateway plug-in, are required for it to work. 
 
 ## How Caber is Different:
-- **Deterministic Detection**: Precise and accurate identification of data with false positive rates less than .001%.
-- **Fine-Grained Control**: Connect data to existing ownership and permissions on data-at-rest, or enrich with metadata from customs sources.
+- **Deterministic Authorization**: Caber identifies data by tracing its lineage back to the sources it comes from.  Where there are multiple possible sources with different permissions, Caber determines which set of permissions to use by precedence, policy, or prevalence.
+- **Fine-Grained Control**: Caber is agnostic to the authorization scheme used.  RBAC, ABAC, and ReBAC are supported.
 - **Byte-level Data Tracing**: Trace the individual API calls that move data bytes from source to your AI systems to determine where and how data security incidents occurred.
 - **Remediation Options**: Get application aware remediation options that account for non-incident data flows to avoid application breakage.
-- **Agentless Deployment**: Caber deploys with a single click automatically in cloud environments without impacting to GenAI applications.
 
 ## See Caber in Action - No email or Sign-up needed
 Caber is using [Haggle](https://www.gohaggle.io/buyer) to anonymously provide live answers to your questions and show you how Caber works.  Register your interest and get your questions answered by clicking [https://app.gohaggle.io/pitch/?domain=https://caber.com]()
