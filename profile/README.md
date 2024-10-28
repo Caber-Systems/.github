@@ -5,7 +5,8 @@
 
 Caber is delivering a radically new architecture for data security that identifies rather than classifies data to secure inputs to Generative AI (GenAI) and Retrieval-Augmented Generation (RAG) systems, and monitor their output for sensitive data disclosure.
 
-![Screen Shot](/profile/cytoscape_1280_900.png)
+![Screen Shot](/profile/RAG_SideBySide.png)
+)
 *<p align="center">Authorization failure incident and associated API call-graph in Caber</p>*
 
 ## Generative AI Security Challenges
