@@ -6,7 +6,7 @@
 Caber is making it easy for enterprises to build RAG-based applications with the same granularity of access control to data they store in RAG as they have on that data in Sharepoint, Confluent, Jira, and other systems.  Without these controls, companies risk violating compliance requirements as users can access knowledge from sensitive data they don't have permission to view. 
 
 ![Screen Shot](/profile/RAG_SideBySide.png)
-*<p align="center">Authorization failure incident and associated API call-graph in Caber</p>*
+*<p align="center">Caber ensures users are only able to retreive chunks from RAG they are aloowed to see</p>*
 
 ## Challenges Putting Permissions of RAG Data
 
