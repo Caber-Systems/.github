@@ -24,6 +24,8 @@ Caber is making it easy for enterprises to build RAG-based applications with the
 ## About
 Caber is backed by data and security industry veterans from Cisco, Akamai, Riverbed, Netskope, Meta, and Oracle.
 
-Caber is Copyright 2024, Caber Systems, Inc.
+*Reach out to us: dev@caber.com*
 
 Terms of use are available at https://www.caber.com/legal/terms-of-service
+Copyright 2024, Caber Systems, Inc.
+
