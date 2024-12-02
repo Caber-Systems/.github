@@ -5,7 +5,7 @@
 
 Caber identifies data by the unique byte sequences it contains then traces the full lineage of all data used in AI applications.  Deploy Caber easily to govern data use in your custom or third-party AI apps by ensuring only those with permission can see data.  For all data consumed by autonomous AI agents, Caber provides a complete audit trail for troubleshooting and compliance.
 
-![Screen Shot](/profile/RAG_SideBySide.png)
+![Screen Shot](/profile/Apple_RAG_for_Website.png)
 *<p align="center">Caber ensures users can only access data they are allowed to see</p>*
 *<p align="center">(Click to enlarge)</p>*
 
