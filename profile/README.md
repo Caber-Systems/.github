@@ -1,9 +1,9 @@
 ![CaberLogo.png](/profile/CaberLogo.png)
 
 
-# AI Data Governance with Unprecedented Granularity and Accuracy
+# AI Data Governance with Unprecedented Visibility and Control
 
-Caber identifies data by the unique byte sequences it contains then traces the full lineage of all data used in AI applications.  Deploy Caber easily to govern data use in your custom or third-party AI apps by ensuring only those with permission can see data.  For all data consumed by autonomous AI agents, Caber provides a complete audit trail for troubleshooting and compliance.
+Caber provides enterprises with unprecedented visibility and deterministic control over data use in AI applications, establishing predictable boundaries and audit trails to govern autonomous and inherently unpredictable AI agent actions. Unlike existing tools that rely on error-prone pattern-matching and similarity-based classification, Caber accurately identifies data by analyzing the sequences of ones and zeros it contains. By tracing the lineage of these sequences from their sources, through API calls on the network, and across business logic, Caber equips data and application owners with actionable intelligence to optimize performance, protect business-critical data, and ensure compliance.
 
 ![Screen Shot](/profile/Apple_RAG_for_Website.png)
 *<p align="center">Caber ensures users can only access data they are allowed to see</p>*
