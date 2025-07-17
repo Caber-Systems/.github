@@ -1,16 +1,18 @@
 ![CaberLogo.png](/profile/CaberBanner.png)
 
-<br><br>
-
-![Screen Shot](/profile/Caber_DREAM_Screenshot.png)
-*<p align="center">Caber tracks the lineage of every data chunk to identify its context and relevance</p>*
-*<p align="center">(Click to enlarge)</p>*
 
 ## Enterprise Data. AI‑Ready.
 
 Enterprise data remains inherently messy. It is created in one silo, copied into others, combined, moved, and referenced repeatedly. Each fragment leaves behind a trail of breadcrumbs—a lineage of where it came from and how it has been used. Caber makes that lineage visible, at scale, across documents, databases, emails, and workflows.
 
 > **🚀 New!** Explore our [PDF vs. HTML Parsing Benchmark Repo](https://github.com/Caber-Systems/pdf-vs-html-parser) and the [accompanying blog post](https://www.caber.com/blog/2e0a903d-caa2-4e93-a3a6-94636ec5ee2e) where we measured how long different parsers take to process enterprise documents.
+
+<br>
+
+![Screen Shot](/profile/Caber_DREAM_Screenshot.png)
+*<p align="center">Caber tracks the lineage of every data chunk to identify its context and relevance</p>*
+*<p align="center">(Click to enlarge)</p>*
+
 
 ## Why Caber Stands Out
 
