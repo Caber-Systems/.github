@@ -1,9 +1,9 @@
 ![CaberLogo.png](/profile/CaberLogo.png)
 
-# Turn Enterprise Data into Knowledge with Full Business Context and Control
+# Turn Enterprise Data into Knowledge <br>with Full Business Context and Control<br> 
 
 ![Screen Shot](/profile/Caber_DREAM_Screenshot.png)
-*<p align="center">Caber ensures users can only access data they are allowed to see</p>*
+*<p align="center">Caber tracks the lineage of every data chunk to identify its context and relevance</p>*
 *<p align="center">(Click to enlarge)</p>*
 
 ## Enterprise Data. AI‑Ready.
