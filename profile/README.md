@@ -2,7 +2,7 @@
 
 # Turn Enterprise Data into Knowledge with Full Business Context and Control
 
-![Screen Shot](/profile/Apple_RAG_for_Website.png)
+![Screen Shot](/profile/Caber DREAM Screenshot.png)
 *<p align="center">Caber ensures users can only access data they are allowed to see</p>*
 *<p align="center">(Click to enlarge)</p>*
 
