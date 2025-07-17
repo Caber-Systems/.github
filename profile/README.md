@@ -1,28 +1,33 @@
 ![CaberLogo.png](/profile/CaberLogo.png)
 
-
-# AI Data Governance with Unprecedented Visibility and Control
-
-Caber provides enterprises with unprecedented visibility and deterministic control over data use in AI applications, establishing predictable boundaries and audit trails to govern autonomous and inherently unpredictable AI agent actions. Unlike existing tools that rely on error-prone pattern-matching and similarity-based classification, Caber accurately identifies data by analyzing the sequences of ones and zeros it contains. By tracing the lineage of these sequences from their sources, through API calls on the network, and across business logic, Caber equips data and application owners with actionable intelligence to optimize performance, protect business-critical data, and ensure compliance.
+# Turn Enterprise Data into Knowledge with Full Business Context and Control
 
 ![Screen Shot](/profile/Apple_RAG_for_Website.png)
 *<p align="center">Caber ensures users can only access data they are allowed to see</p>*
 *<p align="center">(Click to enlarge)</p>*
 
-## Challenges Governing AI Data
+**Enterprise Data. AI‑Ready.**
 
-- **Duplication of Data**: Data consumed in GenAI applications is often chunked and, because of enterprise data duplication, it is common to see 60% to 90% of chunks duplicated in multiple documents that can have conflicting permissions.  
-- **User Experience**: Redacting data in LLM reponses, removing or redacting information the user shouldn't see, solves a security problem at the expense of user experience. With significant chunks of data removed, users can be left looking at a response from the LLM that makes little sense.  Perceived value of the app, in the eyes of the users drop, and lead to dissatisfaction or defection to unsanctioned chat applications.
-- **Service Accounts**: While the user is authenticated through the chat agent, retreival of data from the vector database is done by the chat agent's service account.  Working around this by spoofing user credentials can lead to serious security problems.   
+Enterprise data remains inherently messy. It is created in one silo, copied into others, combined, moved, and referenced repeatedly. Each fragment leaves behind a trail of breadcrumbs—a lineage of where it came from and how it has been used. Caber makes that lineage visible, at scale, across documents, databases, emails, and workflows.
 
-## How Caber is Different:
-- **Permissions Resolution**: Caber identifies data in AI apps by tracing the data's lineage back to the sources it comes from.  Where there are multiple possible sources with different permissions, Caber determines which set of permissions to use by precedence, policy, or prevalence.
-- **Authoriation Accross API Calls**: Tracing data lineage also gives Caber the ability to determine the user that service account API calls are being made on behalf of, even across multiple hops.  
-- **Granularity and User Experience**: Caber is agnostic to the authorization scheme used (RBAC, ABAC, and ReBAC..) and redacts RAG chunks the user is not allowed to see before they are sent to the LLM.  Thus, the LLM response is coherent and relevant to just the data the user has access to.
-- **Observability**: When things go wrong, Caber provides deep observability for authorization failures and incidents -- including data movement leading up to the incident -- so you have the tools to fix them.
+> **🚀 New!** Explore our [PDF vs. HTML Parsing Benchmark Repo](https://github.com/Caber-Systems/pdf-vs-html-parser) and the [accompanying blog post]([https://caber.com/blog/pdf-vs-html-parse-times](https://www.caber.com/blog/2e0a903d-caa2-4e93-a3a6-94636ec5ee2e) where we measured how long different parsers take to process enterprise documents.
 
-**<p align="center">Get in touch with us now to get control of your AI data: dev@caber.com</p>**
+## Why Caber Stands Out
 
-Terms of use are available at https://www.caber.com/legal/terms-of-service
+* **Cross-System Relationships:** While many tools focus on file-level events or sections within one document, Caber traces data fragments across multiple systems of record, showing how information truly flows.
+* **Deterministic Lineage:** Instead of probabilistic guesses, Caber deterministically follows sentences, paragraphs, and table cells back to their sources, allowing teams to know exactly what data they are working with.
+* **Policy-Ready Metadata:** By understanding precise origins, Caber can help organizations automatically apply usage policies and surface data quality issues that otherwise stay hidden.
 
-Copyright 2024, Caber Systems, Inc.
+## Practical Use Cases
+
+* **Security Incident Analysis:** Identify the specific origins of leaked or misused data in seconds rather than weeks.
+* **Compliance Evidence:** Generate accurate lineage reports that stand up in audits because they are backed by concrete data movement records.
+* **Data Preparation for AI:** Select only the right data for training and retrieval‑augmented generation, reducing noise and improving model accuracy.
+
+## A Tool Built for Builders
+
+Caber was designed with engineers, data architects, and security teams in mind. It integrates with existing data pipelines, surfaces verifiable lineage, and gives you tools to reason about your data’s journey across the enterprise.
+
+[Learn more and request a demo](https://caber.com) or check out our open-source benchmarks and experiments in the repos above.
+
+Copyright 2025, Caber Systems, Inc.
