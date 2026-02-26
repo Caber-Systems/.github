@@ -28,20 +28,6 @@ Caber works at the fragment level, fingerprinting common sentences and byte sequ
 
 ---
 
-> 🚀 **New!** Explore our [PDF vs. HTML Parsing Benchmark Repo](https://github.com/Caber-Systems/pdf-vs-html-parser) and the [accompanying blog post](https://www.caber.com/blog/2e0a903d-caa2-4e93-a3a6-94636ec5ee2e) where we measured how long different parsers take to process enterprise documents.
-
-<br>
-
-<div align="center">
-
-[![Screen Shot](/Caber-Systems/.github/raw/main/profile/Caber_DREAM_Screenshot.png)](/Caber-Systems/.github/blob/main/profile/Caber_DREAM_Screenshot.png)
-
-*Caber tracks the lineage of every data chunk to identify its context and relevance · (Click to enlarge)*
-
-</div>
-
-<br>
-
 ## 🔍 The Problem
 
 AI systems retrieve fragments (sentences, tables, charts) from across your infrastructure and assemble them into a context window at query time.
