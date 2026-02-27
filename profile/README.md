@@ -34,7 +34,7 @@ AI systems retrieve fragments (sentences, tables, charts) from across your infra
 
 The bytes that arrive rarely contain within them the context needed to know what they mean. Nothing in the content tells you whether it came from the version 1 docs or the version 2 docs, what project it belongs to, or whether a newer version has superseded it.
 
-Knowing the source is not sufficient. Enterprise data is copy-pasted, forwarded, and overshared across emails, messaging, shared drives, and databases. The same paragraph ends up in dozens of places. Every copy carries slightly different context: different access permissions, different freshness, different authority. The identical bytes retrieved from one location may be authorized; from another, they may not.
+Knowing the source is not sufficient. Lineage is not a line, it's a graph. Enterprise data is copy-pasted, forwarded, and overshared across emails, messaging, shared drives, and databases. The same paragraph ends up in dozens of places. Every copy carries slightly different context: different access permissions, different freshness, different authority. The identical bytes retrieved from one location may be authorized; from another, they may not.
 
 When problems can't be prevented they land on your team. AI performance issues accumulate in backlogs that developers do not have time to fix and do not have tools to diagnose. When a model returns a wrong answer, there is no way to determine after the fact whether the fragments were stale, relevant, authorized, or from the correct tenant. The failure is silent, the root cause is invisible, and the ticket stays open.
 
