@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://caber.com">
-    <img src="CaberBanner.png" alt="Caber Systems" width="100%">
+    <img src="image/CaberBanner.png" alt="Caber Systems" width="100%">
   </a>
 </p>
 
