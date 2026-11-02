@@ -1,12 +1,11 @@
 <p align="center">
   <a href="https://caber.com">
-    <img src="/profile/CaberBanner.png" alt="Caber Systems" width="100%">
+    <img src="https://raw.githubusercontent.com/Caber-Systems/.github/main/profile/CaberLogo.png" alt="Caber Systems" width="140">
   </a>
 </p>
 
-
-<h2 align="center">Automated Context Engineering</h2>
-<p align="center"><i>Deterministic, policy-driven control to ensure quality and security of every data fragment AI uses, before inference.</i></p>
+<h1 align="center">Active Data Use Control for Agentic AI</h1>
+<p align="center"><i>Freshness, provenance, and policy, checked down to the sentence before agents see it.</i></p>
 
 <p align="center">
   <a href="https://caber.com">Website</a> ·
@@ -16,120 +15,153 @@
 
 ---
 
-<details open>
-<summary><b>📌 TL;DR</b></summary>
-<br>
-<blockquote>
-AI retrieves fragments (sentences, tables, charts) and assembles them into context at query time. The bytes rarely contain what you need to govern them: which version, which tenant, whether they are stale. Existing guardrails that just remove data can cause hallucinations. Classification happens too early. Identity controls stop at the API. Authorization does not mean relevance.
-<br><br>
-Caber works at the fragment level, fingerprinting common sentences and byte sequences in storage, moving in APIs, and used in AI agents.  It uses this duplicate data scattered across your systems as signal, connecting raw bytes to their meaning through a Context Graph built with patented algorithms 1000x faster than AI. Each fragment is evaluated <i>deterministically</i> for freshness, authorization, relevance, and tenant isolation before the model sees it.
-</blockquote>
-</details>
-
----
-
-## 🔍 The Problem
-
-AI systems retrieve fragments (sentences, tables, charts) from across your infrastructure and assemble them into a context window at query time.
-
-The bytes that arrive rarely contain within them the context needed to know what they mean. Nothing in the content tells you whether it came from the version 1 docs or the version 2 docs, what project it belongs to, or whether a newer version has superseded it.
-
-Knowing the source is not sufficient. Lineage is not a line, it's a graph. Enterprise data is copy-pasted, forwarded, and overshared across emails, messaging, shared drives, and databases. The same paragraph ends up in dozens of places. Every copy carries slightly different context: different access permissions, different freshness, different authority. The identical bytes retrieved from one location may be authorized; from another, they may not.
-
-When problems can't be prevented they land on your team. AI performance issues accumulate in backlogs that developers do not have time to fix and do not have tools to diagnose. When a model returns a wrong answer, there is no way to determine after the fact whether the fragments were stale, relevant, authorized, or from the correct tenant. The failure is silent, the root cause is invisible, and the ticket stays open.
-
-## 🚫 Why Existing Tools Do Not Solve This
+Caber provides active, inline data use control, sub document mutation, and fragment level provenance for Generative AI, Retrieval Augmented Generation (RAG), and autonomous agentic workflows.
 
 <table>
 <tr>
-<td width="33%" valign="top">
+<td width="25%" valign="top">
 
-**🏷️ Classification & Curation**
+### 🔄 Freshness
 
-Classification happens before inference, but the decisions that matter depend on how data is used at inference time. A fragment classified as "internal" at ingest may be appropriate for one query and inappropriate for another depending on the user, the tenant, and what else is in the context window. Labels become stale as documents are updated and priorities shift.
-
-</td>
-<td width="33%" valign="top">
-
-**🔑 User Identity**
-
-Identity controls access to APIs and endpoints, but not to the data itself once it has been pulled into your RAG pipeline. Authentication determines that a user can reach the retrieval service. It does not determine whether each fragment returned is appropriate for that user, for that query, at that moment.
+Link every copy of a fragment across your systems, rebuild its version history from those copies, and withhold superseded versions.
 
 </td>
-<td width="33%" valign="top">
+<td width="25%" valign="top">
 
-**✅ Authorization ≠ Relevance**
+### 🎯 Provenance
 
-Data a user is authorized to access may still be wrong for the purpose. An L2 support team member authorized to access configuration data for both tenant 1 and tenant 2 does not mean tenant 1's configuration should appear in a response to tenant 2's support ticket. Authorized but irrelevant data produces wrong answers that pass every access control check.
+Assign deterministic identity to data fragments as small as 64 bytes, about a sentence on average, and trace every copy to its source object and byte span.
+
+</td>
+<td width="25%" valign="top">
+
+### ⚡ Data Use Policy
+
+Evaluate compiled Rego policies in process to release, mask, replace, or withhold fragments before they reach an agent or model.
+
+</td>
+<td width="25%" valign="top">
+
+### 🤖 Agent Native
+
+Capture agent framework, MCP, and API calls without code changes, carrying the end user's on behalf of identity across every hop.
 
 </td>
 </tr>
 </table>
 
-## ⚡ What Caber Does
+---
 
-Caber fingerprints the common fragments, the same sentences, tables, and byte sequences that appear across systems, to connect the bytes to their meaning. It deterministically identifies every fragment, traces its duplicates, reattaches the context that copying strips away, and enforces policy before the model sees it.
+## 🔍 Why Controlling AI Data Use Is Hard
 
-Caber automates context engineering with its **Inference-Time Data Control Plane**, deterministically, 1000x faster than AI.
+Three facts about enterprise data explain why file level permissions and prompt only scanners fall short.
 
-## 🔧 How It Works
+<details>
+<summary><b>1. Enterprise data is duplicated, mostly inside documents</b></summary>
+<br>
+People copy the same paragraphs, tables, and boilerplate into files that otherwise differ, so controls that track whole files miss most of the copies. Backup and enterprise storage deduplication numbers <a href="https://community.ibm.com/community/user/blogs/puneet-sharma/2026/04/07/how-deduplication-works-in-ibm-storage-protect">often exceed 80 to 90 percent</a>, and reach <a href="https://www.silver-peak.com/sites/default/files/infoctr/panasoniccasestudy.pdf">up to 99 percent</a> for data in use on networks.
+</details>
 
-```
-┌─────────────┐    ┌─────────────┐    ┌──────────────────┐    ┌─────┐
-│  RAG / MCP  │───▶│   Caber     │───▶│  Clean Context   │───▶│ LLM │
-│  API / A2A  │    │  Control    │    │  Window          │    │     │
-└─────────────┘    │  Plane      │    └──────────────────┘    └─────┘
-                   │             │
-                   │ Per-chunk:  │
-                   │ ✓ Allow     │
-                   │ ✗ Block     │
-                   │ ◐ Redact    │
-                   │ ↻ Replace   │
-┌─────────────┐    └──────┬──────┘
-│  SDKs,      │           │
-│  SaaS and   │    ┌──────▼──────┐
-│  storage    │───▶│  Context    │
-│  connectors │    │  Graph      │
-└─────────────┘    └─────────────┘
-```
+<details>
+<summary><b>2. Most business data does not identify itself</b></summary>
+<br>
+Some data identifies itself: a payment card number has a fixed format and a check digit, so a pattern match finds it in any file. Most business data carries no such marker. Take a sentence from a board memo. Whether it is <b>fresh</b> (the current version), <b>stale</b> (because a newer document replaced it), or a <b>trade secret</b> (valuable because its owner keeps it secret) depends on facts outside the sentence. A classifier that reads only the text cannot tell these cases apart.
+</details>
 
-| | Capability | Detail |
-|---|---|---|
-| 🧬 | **Deterministic Fragment Identity** | Identifies data at the fragment level (sentences, tables, charts) using deterministic algorithms in C, C++, and Rust. Matching is exact, not probabilistic. |
-| 🌐 | **Cross-System Context Assembly** | Traces fragments across multiple systems of record. Full context (lineage, version, ownership, authority) is assembled before any policy decision. |
-| 🔄 | **Continuous Context Updates** | Business context changes after ingest. The Context Graph updates continuously so policy evaluates against current state, not a stale snapshot. |
-| 🛡️ | **Policy-Driven Inference Control** | Each fragment is evaluated for freshness, authorization, conflicts, and relevance before inference. Actions are per-fragment: allow, block, redact, or replace. |
+<details>
+<summary><b>3. Content is finite; context is unbounded</b></summary>
+<br>
+A sentence is a fixed, finite string of bytes, but the context that governs how it may be used keeps growing with every new copy, reader, version, and policy: where each copy came from, who owns it, who may read it, which version is current, and which policies apply. Content copies freely, while context stays behind. A sentence pasted into an email loses the permissions of the folder it came from. Because the same sentence means different things in different places, handing raw text to an agent strips the rules that control its use.
+</details>
 
+---
 
-## Architecture Highlights
+## 🔧 How Caber Works
 
-- **Core algorithms in C, C++, and Rust** — chunk identification, deduplication, and graph traversal are compute-bound problems; we treat them that way
-- **Deterministic, not probabilistic** — content-defined chunking and byte-level identity mean results are reproducible and auditable
-- **Observes live traffic** — starts producing value from APIs, MCP, and RAG pipelines immediately; no prerequisite inventory or catalog project required
-- **Context Graph builds continuously** — coverage deepens with every event; relationships between chunks compound over time
-- **Protocol-native integration** — works where data actually moves: REST APIs, MCP servers, RAG retrieval, agent-to-agent calls
+Caber solves these three problems by identifying content down to the sentence, gathering context from every copy across your systems, and enforcing policy in process at inference time.
 
+1. **Fingerprint content.** Split each file, message, or API payload into fragments of about one sentence, and give each fragment a deterministic fingerprint. The same text gets the same fingerprint wherever it appears.
+2. **Link the copies.** Group fragments with the same fingerprint across sources, formats, and systems so partial copies inside different documents share one identity.
+3. **Collect context from every copy.** Attach each copy's source, owner, permissions, and timestamps, along with extracted entities and ontology labels, to the fragment in a context graph.
+4. **Resolve versions** *(beta)*. Arrange related documents into a version history built from their shared fragments so policies can identify superseded content.
+5. **Decide at inference time.** When an agent or application retrieves data, run compiled Rego policies in process against the fragment's context, the end user the agent acts for, and the purpose of the request to release, mask, replace, or withhold the fragment.
+6. **Record the decision.** Emit an audit receipt that records the fragment, the policy, the identity, and the declared purpose.
 
-## 🕸️ The Context Graph: 1000x Faster Than AI Alone
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Caber-Systems/.github/main/profile/dual-plane-architecture-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Caber-Systems/.github/main/profile/dual-plane-architecture-light.svg">
+    <img src="https://raw.githubusercontent.com/Caber-Systems/.github/main/profile/dual-plane-architecture-light.svg" alt="Caber architecture: an asynchronous ingest and context indexing plane feeding an in process runtime enforcement plane" width="100%">
+  </picture>
+</p>
 
-To enforce policy on a fragment, you need to know what it means. To know what it means, you need its lineage. *But lineage isn't a line. It's a graph*.
+---
 
-Fragments of enterprise data are copy-pasted and overshared in emails, messaging, documents, and databases, many times over. Every copy comes with slightly different context: different permissions, different freshness, different authority. Identifying any one instance requires seeing all of them.
-
-Caber uses these duplicates as signal. Each copy is a node in the Context Graph. The relationships between copies (where each came from, when it arrived, who has access, what has changed) connect raw bytes to their meaning. This is how Caber determines v1 vs v2, tenant A vs tenant B, current vs stale.
-
-Building these graphs with AI models is slow, expensive, and non-deterministic. Caber's patented algorithms build the Context Graph **deterministically, 1000x faster**, using optimized C, C++, and Rust. The graph grows continuously from live traffic. No prerequisite data inventory. No batch processing.
-
-## 🎯 What This Enables
+## ✨ What Sets Caber Apart
 
 | | Capability | Detail |
 |---|---|---|
-| 🔁 | **Prevent recurring inference failures** | Stale, conflicting, or unauthorized fragments are resolved before they reach the model. Silent recurring failures are prevented at the source. |
-| 📎 | **Context-aware RAG** | Retrieved chunks are enriched with true origin, version, and business context at retrieval time. The model receives fragments with meaning, not stripped bytes. |
-| 🏗️ | **Deterministic GraphRAG construction** | Data relationship graphs built deterministically from fragment lineage. No LLM required for graph construction. |
-| 🏢 | **Tenant isolation at the fragment level** | Fragments evaluated against tenant boundaries per query. Tenant 1's configuration does not appear in tenant 2's response. |
-| 👤 | **User-aware governance** | On-behalf-of attribution preserved across APIs, MCP, RAG, and agent chains. Policy evaluates against the requesting human, not the last service account. |
-| 📋 | **Compliance evidence** | Every policy decision (allow, block, redact, replace) is logged with the fragment, the policy, and the requesting user. |
+| 🧬 | **Sentence Level Provenance** | Links each data fragment (down to 64 bytes, about a sentence) to every stored copy, its source object, and its exact byte span. |
+| 🕰️ | **Multi Version Freshness Arbitration** *(beta)* | Rebuilds version history from overlapping copies and withholds superseded revisions at decision time (88% freshest version accuracy; 0.974 Kendall tau on a git history benchmark). |
+| 🔁 | **Duplicates as Signal** | Groups identical fragments across email, chat, shared drives, and databases into equivalence classes with percent overlap scoring to surface where duplicated content lives. |
+| 🛡️ | **Inline Rego Policies** | Compiles RBAC, ABAC, tenant, and purpose rules to WebAssembly for in process evaluation with no network or database call on the decision path. Hot reloadable and fail closed by default. |
+| 👤 | **On Behalf Of (OBO) User Identity** | Decodes JWT, AWS SigV4, SPIFFE, and mTLS credentials and propagates the end user's identity across agent, MCP tool, and API hops via W3C trace context so policy evaluates the human behind the call. |
+
+---
+
+## ⚙️ Zero Code Integration
+
+Taking inspiration from [OpenTelemetry](https://opentelemetry.io/) for zero code integration, Caber instruments existing Python applications without code changes. Set the connection to your Caber deployment, then run your application under `caber-run`:
+
+```bash
+export CSI_API_KEY="your-api-key"
+export CSI_CABER_HOST="https://your-caber-instance.example.com"
+
+caber-run python app.py
+caber-run uvicorn myapp:app --host 0.0.0.0
+```
+
+Or enable it in code, before any HTTP or agent framework library is imported:
+
+```python
+import pycaber.auto  # must come before HTTP and agent framework imports
+
+import requests
+from langgraph.prebuilt import create_react_agent
+# Tool calls, retrievals, and API responses are now captured and checked against policy
+```
+
+`pycaber` patches 15 transports, including requests, httpx, aiohttp, and urllib3; WSGI and ASGI servers; WebSocket clients; and gRPC clients and servers. It captures tool, retriever, and memory calls in LangChain, LangGraph, CrewAI, LlamaIndex, and AutoGen without changes to agent logic. For custom functions exposed to agents, the `@pycaber.tool` decorator attaches policy metadata. Policies are authored centrally in the Caber admin console and deployed into `caber-core`, not into application code.
+
+---
+
+## 📊 Performance & Sizing
+
+| Property | Value | Status |
+| :--- | :--- | :--- |
+| **Fragment Granularity** | 64 byte minimum, about 187 bytes typical, about 820 byte maximum | Implemented (content defined fragmentation) |
+| **Policy Evaluation Path** | Compiled Wasm in process; no network or database call | Implemented |
+| **Policy Evaluation Latency** | P95 under 2.5 ms | Design target |
+| **Mediated Retrieval Latency** | Under 35 ms | Design target |
+| **Freshest Version Accuracy** | 88% freshest match; Kendall tau 0.974 | Measured on a git history benchmark *(beta)* |
+
+Design targets are engineering goals, not measured results.
+
+---
+
+## 🔌 Ecosystem Integrations
+
+Caber connects across your existing AI and infrastructure stacks:
+
+| Agent Frameworks | Models & Vector Stores | Protocols & Identity | Data Sources (Connectors) |
+| :--- | :--- | :--- | :--- |
+| • **LangGraph**<br/>• **LangChain**<br/>• **LlamaIndex**<br/>• **CrewAI**<br/>• **AutoGen** | Calls detected and typed *(beta)*:<br/>• **OpenAI**, **Anthropic**<br/>• **AWS Bedrock**<br/>• **Google** (incl. Vertex AI)<br/>• **Cohere**, **Mistral**<br/>• **Groq**, **Together**, **Fireworks**, **DeepSeek**, **Perplexity**<br/>• **Self hosted endpoints** (e.g., vLLM, by configuration)<br/>• **Pinecone\***, **Weaviate\***, **Chroma\*** | • **Model Context Protocol** (MCP)<br/>• **A2A** *(beta)*<br/>• **gRPC / protobuf**, **WebSocket**<br/>• **OIDC / JWT** identity providers<br/>• **AWS SigV4**, **SPIFFE**, **mTLS** | • **AWS S3 / MinIO**<br/>• **Google Cloud Storage\***<br/>• **Azure Blob\***<br/>• **PostgreSQL**, **MySQL**, **SQLite**<br/>• **File systems**<br/>• **CloudTrail**, **Kafka\***, **API polling** |
+
+\* On near term roadmap.
+
+Caber is self hosted with Docker Compose, including a single host trial mode. Internally, `caber-core` uses RocksDB with Roaring bitmaps for the fingerprint index, OpenSearch for events and content, and Neo4j for the context graph.
+
+---
 
 ## 🤝 Building With Enterprise Engineering Teams
 
