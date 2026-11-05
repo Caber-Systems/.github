@@ -9,8 +9,8 @@
 
 <p align="center">
   <a href="https://caber.com">Website</a> ·
-  <a href="https://caber.com/blogs">Blog</a> ·
-  <a href="https://caber.com/request_briefing">Talk to Us</a>
+  <a href="https://docs.caber.com">Docs</a> ·
+  <a href="https://github.com/Caber-Systems/examples">Examples</a>
 </p>
 
 ---
@@ -171,8 +171,8 @@ We are building this with early design partners. If your team is building or ope
 
 <p align="center">
 <a href="https://caber.com"><b>🌐 caber.com</b></a>&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;
-<a href="https://caber.com/request_briefing"><b>💬 Start a Conversation</b></a>&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;
-<a href="https://caber.com/blogs"><b>📝 Blog</b></a>
+<a href="https://docs.caber.com"><b>📚 Docs</b></a>&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/Caber-Systems/examples"><b>🧪 Examples</b></a>
 </p>
 
 ---
