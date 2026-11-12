@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 580" role="img" aria-label="Caber architecture (light mode)">
+  
+  <defs>
+    <style>
+      .diagram-bg { fill: #f8faf4; }
+      .zone-box { fill: #eef3e8; stroke: #b8c9b0; stroke-width: 1.5; stroke-dasharray: 6 4; rx: 14px; }
+      .node-card { fill: #ffffff; stroke: #b8c9b0; stroke-width: 1.75; rx: 10px; }
+      .node-emerald { fill: #ebfbee; stroke: #2f9e44; stroke-width: 2; rx: 10px; }
+      .node-violet { fill: #f3f0ff; stroke: #6741d9; stroke-width: 2; rx: 10px; }
+      .node-amber { fill: #fff9db; stroke: #e67700; stroke-width: 2; rx: 10px; }
+      .title-text { font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 16px; font-weight: 700; fill: #162013; }
+      .zone-title { font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 12px; font-weight: 700; fill: #4a5a44; letter-spacing: 0.08em; text-transform: uppercase; }
+      .node-title { font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 14px; font-weight: 700; fill: #162013; }
+      .node-sub { font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif; font-size: 11.5px; font-weight: 400; fill: #42523d; }
+      .node-code { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; fill: #2b8a3e; }
+      .node-code-violet { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; fill: #5f3dc4; }
+      .node-code-amber { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; fill: #d9480f; }
+      .edge-label { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; font-weight: 600; fill: #2c3829; }
+      .edge-pill { fill: #ffffff; stroke: #b8c9b0; stroke-width: 1; rx: 5px; }
+      .edge-emerald { stroke: #2f9e44; stroke-width: 2.2; fill: none; }
+      .edge-violet { stroke: #6741d9; stroke-width: 2.2; fill: none; }
+      .edge-amber { stroke: #e67700; stroke-width: 2.2; fill: none; }
+      .edge-muted { stroke: #657c60; stroke-width: 2; fill: none; }
+    </style>
+    <marker id="arrow-emerald" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#2f9e44" />
+    </marker>
+    <marker id="arrow-violet" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#6741d9" />
+    </marker>
+    <marker id="arrow-amber" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#e67700" />
+    </marker>
+    <marker id="arrow-muted" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#657c60" />
+    </marker>
+  </defs>
+
+  <rect width="1160" height="580" rx="14" class="diagram-bg" />
+
+  <text x="40" y="44" class="title-text">Caber Architecture</text>
+  <text x="40" y="66" class="node-sub">Three sources of context feed one core; the core decides in the caller&#x27;s process.</text>
+
+  
+  <g transform="translate(40, 128)">
+    <rect width="270" height="146" class="node-violet" />
+    <text x="16" y="26" class="node-title">[1] Agents, Services &amp; Tools</text>
+    <text x="16" y="48" class="node-sub">pycaber SDK: zero code, in process</text>
+    <text x="16" y="66" class="node-sub">Tool calls, API &amp; model payloads</text>
+    <text x="16" y="84" class="node-sub">Carries the human the agent acts for</text>
+    <text x="16" y="102" class="node-sub">Applies the decision before the model</text>
+  </g>
+
+  
+  <g transform="translate(410, 96)">
+    <rect width="340" height="184" class="node-emerald" />
+    <text x="16" y="26" class="node-title">[2] Caber Core</text>
+    <text x="16" y="48" class="node-sub">WRL fingerprinting, 40 byte floor</text>
+    <text x="16" y="66" class="node-sub">Roaring fragment index (.rbix)</text>
+    <text x="16" y="84" class="node-sub">Copy linking and version resolution</text>
+    <text x="16" y="102" class="node-sub">Rego policy engine, Wasm, in process</text>
+    <text x="16" y="120" class="node-sub">Release, mask, replace or withhold</text>
+    <text x="16" y="138" class="node-sub">Audit receipt per decision</text>
+  </g>
+
+  
+  <g transform="translate(850, 128)">
+    <rect width="270" height="146" class="node-amber" />
+    <text x="16" y="26" class="node-title">[6] Context Graph</text>
+    <text x="16" y="48" class="node-sub">Fragments, copies, objects</text>
+    <text x="16" y="66" class="node-sub">Principals, versions, permissions</text>
+    <text x="16" y="84" class="node-sub">Relationships across every copy</text>
+    <text x="16" y="102" class="node-sub">Lineage queries from the console</text>
+  </g>
+
+  <rect x="160" y="416" width="840" height="136" class="zone-box" />
+  <text x="180" y="440" class="zone-title">Connectors</text>
+  
+  <g transform="translate(180, 450)">
+    <rect width="250" height="86" class="node-emerald" />
+    <text x="16" y="26" class="node-title">[3] Storage &amp; Document</text>
+    <text x="16" y="48" class="node-sub">S3, GCS, Azure, SQL, file systems</text>
+    <text x="16" y="66" class="node-sub">Bytes plus ACLs, owners, times</text>
+  </g>
+  
+  <g transform="translate(455, 450)">
+    <rect width="250" height="86" class="node-emerald" />
+    <text x="16" y="26" class="node-title">[4] Log &amp; Event</text>
+    <text x="16" y="48" class="node-sub">CloudTrail, SaaS audit, Kafka</text>
+    <text x="16" y="66" class="node-sub">Who touched which copy, when</text>
+  </g>
+  
+  <g transform="translate(730, 450)">
+    <rect width="250" height="86" class="node-card" />
+    <text x="16" y="26" class="node-title">[5] Identity Systems</text>
+    <text x="16" y="48" class="node-sub">OIDC, Entra, Okta, SCIM, SPIFFE</text>
+    <text x="16" y="66" class="node-sub">User and group attributes</text>
+  </g>
+
+  <path d="M 310 184 L 410 184" class="edge-violet" marker-end="url(#arrow-violet)" />
+  
+  <g transform="translate(318, 173)">
+    <rect width="80" height="22" class="edge-pill" />
+    <text x="40" y="15" text-anchor="middle" class="edge-label">payloads</text>
+  </g>
+  <path d="M 410 234 L 310 234" class="edge-violet" marker-end="url(#arrow-violet)" />
+  
+  <g transform="translate(318, 223)">
+    <rect width="80" height="22" class="edge-pill" />
+    <text x="40" y="15" text-anchor="middle" class="edge-label">decisions</text>
+  </g>
+
+  <path d="M 750 184 L 850 184" class="edge-amber" marker-end="url(#arrow-amber)" />
+  
+  <g transform="translate(758, 173)">
+    <rect width="80" height="22" class="edge-pill" />
+    <text x="40" y="15" text-anchor="middle" class="edge-label">context in</text>
+  </g>
+  <path d="M 850 234 L 750 234" class="edge-amber" marker-end="url(#arrow-amber)" />
+  
+  <g transform="translate(758, 223)">
+    <rect width="80" height="22" class="edge-pill" />
+    <text x="40" y="15" text-anchor="middle" class="edge-label">lookups</text>
+  </g>
+
+  <path d="M 305 450 L 305 356 L 470 356 L 470 280" class="edge-emerald" marker-end="url(#arrow-emerald)" />
+  
+  <g transform="translate(245, 384)">
+    <rect width="120" height="22" class="edge-pill" />
+    <text x="60" y="15" text-anchor="middle" class="edge-label">bytes + ACLs</text>
+  </g>
+  <path d="M 580 450 L 580 280" class="edge-emerald" marker-end="url(#arrow-emerald)" />
+  
+  <g transform="translate(520, 356)">
+    <rect width="120" height="22" class="edge-pill" />
+    <text x="60" y="15" text-anchor="middle" class="edge-label">access events</text>
+  </g>
+  <path d="M 855 450 L 855 356 L 690 356 L 690 280" class="edge-muted" marker-end="url(#arrow-muted)" />
+  
+  <g transform="translate(795, 384)">
+    <rect width="120" height="22" class="edge-pill" />
+    <text x="60" y="15" text-anchor="middle" class="edge-label">attributes</text>
+  </g>
+
+</svg>
