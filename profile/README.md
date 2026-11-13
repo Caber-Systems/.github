@@ -11,10 +11,12 @@
 <p align="center"><i>Freshness, provenance, and policy, checked down to the sentence before agents see it.</i></p>
 
 <p align="center">
-  <a href="https://caber.com">Website</a> ·
-  <a href="https://docs.caber.com">Docs</a> ·
-  <a href="https://github.com/Caber-Systems/examples">Examples</a>
+  <strong><a href="https://github.com/Caber-Systems/examples">Try the free preview</a></strong> ·
+  <a href="https://docs.caber.com">Read the docs</a> ·
+  <a href="https://caber.com">Caber website</a>
 </p>
+
+***
 
 ## The Problem
 
