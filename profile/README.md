@@ -8,7 +8,7 @@
 </p>
 
 <h1 align="center">Active Data Use Control for Agentic AI</h1>
-<p align="center"><i>Freshness, provenance, and policy, checked down to the sentence before agents see it.</i></p>
+<p align="center"><i>Check permissions and source history before retrieved content reaches the model.</i></p>
 
 <p align="center">
   <strong><a href="https://github.com/Caber-Systems/examples">Try the free preview</a></strong> ·
@@ -20,19 +20,32 @@
 
 ## The Problem
 
-AI agents turn longstanding problems with stale and overshared enterprise data into recurring cleanup work for engineers.  
+An agent's access should reflect the user asking the question.
 
-Enterprise users copy and paste text across files, messages, repositories, and tickets. Each copy can have a different owner, access control list (ACL), timestamp, and revision history. MCP, RAG indexes, and tools typically return a single copy with at most that source's metadata. The evidence that a passage is fresh or permissible to use may be attached to another source, if at all.
+Caber checks retrieved content before it reaches the model, using the requesting user's identity, source permissions, and version history.
 
-Agents using service accounts with broad permissions compound the problem. Even with access scoped to the user, agents may find and retrieve protected data fragments from a less restricted copy.
+It addresses three common failures:
 
-Automation to find duplicate fragments in large enterprise corpora is lacking, while data loss prevention tools perform poorly for text like trade secrets, deprecated code, or other data that is difficult to characterize by its content alone.
+* **Data leaks.** Block access to one copy, and agents find another.
+* **Stale answers.** A stale passage reads the same as a current one.
+* **Overbroad agent access.** A shared service account gives users access beyond their own permissions.
+
+Caber links matching fragments across sources, enforces policy at instrumented retrieval and tool boundaries, and records the evidence behind each decision.
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Caber-Systems/.github/main/profile/new_audit_trace_detail_dark.png">
+    <img src="https://raw.githubusercontent.com/Caber-Systems/.github/main/profile/new_audit_trace_detail_light.png" alt="Caber Console trace showing sentence level redaction with stale and duplicate results" width="100%">
+  </picture>
+</p>
+
+*Figure 1: One agent retrieval in the Caber Console. Caber strikes the sentences the requesting user's policy restricts (red) and passages duplicated across returned versions (blue), flags stale versions, and delivers the rest of each result to the model.*
 
 ***
 
 ## Technical Approach
 
-To assess freshness and permissible use, a system needs to connect each retrieved fragment to its known occurrences and use their source metadata before passing the fragment to the model. To trace downstream use, it also needs to record which fragments reached the model and what evidence links them to its output.
+A relevant passage can still be restricted or stale. An AI model cannot enforce permissions it was never given. Caber connects retrieved fragments to their known occurrences and source metadata so policy can be enforced before the content reaches the model.
 
 Caber implements this in five stages.
 
@@ -53,11 +66,11 @@ Caber implements this in five stages.
   </picture>
 </p>
 
-*Figure 1: Caber architecture. Three sources of context (instrumented callers, storage and event connectors, and identity connectors) feed one core, which decides in the caller's process and records relationships in a context graph.*
+*Figure 2: Caber architecture. Three sources of context (instrumented callers, storage and event connectors, and identity connectors) feed one core, which decides in the caller's process and records relationships in a context graph.*
 
 The SDK instruments applications without changes to agent logic and evaluates Rego compiled to WebAssembly in the caller's process. The indexing engine identifies fragments, and connectors supply enterprise metadata and identity. The context graph records relationships among fragments, sources, principals, policies, and observed operations.
 
-The [Architecture Overview](https://docs.caber.com/architecture/) describes each numbered component in Figure 1.
+The [Architecture Overview](https://docs.caber.com/architecture/) describes each numbered component in Figure 2.
 
 ***
 
